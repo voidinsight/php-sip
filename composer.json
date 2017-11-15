@@ -10,5 +10,16 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "VoidInsight\\PHPSIP\\": "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "php": "7.1.11",
+        "ext-openssl": "^7.1",
+        "ext-filter": "^7.1",
+        "ext-hash": "^1.0"
+    }
 }
