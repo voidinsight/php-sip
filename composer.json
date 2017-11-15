@@ -1,0 +1,14 @@
+{
+    "name": "voidinsight/php-sip",
+    "description": "PHP implementation of Session Initiation Protocol",
+    "type": "library",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Alberto Clemente",
+            "email": "albertoclemente1983@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
