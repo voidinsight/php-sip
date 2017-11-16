@@ -2,7 +2,7 @@
     "name": "voidinsight/php-sip",
     "description": "PHP implementation of Session Initiation Protocol",
     "type": "library",
-    "license": "GPLv3",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "Alberto Clemente",
@@ -12,13 +12,18 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "VoidInsight\\PHPSIP\\": "src/",
+            "VoidInsight\\PHPSIP\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "VoidInsight\\PHPSIP\\Tests\\": "tests/"
         }
     },
-    "require": {},
+    "require": {
+        "php": "^7.1"
+    },
     "require-dev": {
-        "php": "7.1.11",
         "ext-openssl": "^7.1",
         "ext-filter": "^7.1",
         "ext-hash": "^1.0",

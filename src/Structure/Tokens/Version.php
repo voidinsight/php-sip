@@ -2,7 +2,7 @@
 
 namespace VoidInsight\PHPSIP\Structure\Tokens;
 
-class Version extends Token
+class Version implements ReadOnlyTokenInterface
 {
     private $majorNumber;
     private $minorNumber;
@@ -30,5 +30,18 @@ class Version extends Token
     public function getMinorNumber(): int
     {
         return $this->minorNumber;
+    }
+    
+    public function getTokenValue(): string
+    {
+        return $this->getMajorNumber()
+                . '.'
+                . $this->getMinorNumber();
+    }
+    
+    public function __construct()
+    {
+        $this->setMajorNumber(0)
+             ->setMinorNumber(0);
     }
 }

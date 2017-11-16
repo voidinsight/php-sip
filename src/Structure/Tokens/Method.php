@@ -4,16 +4,14 @@ namespace VoidInsight\PHPSIP\Structure\Tokens;
 
 class Method extends Token
 {
-    private $methodName;
     
     public function setMethodName(string $methodName): Method
     {
-        $this->methodName = $methodName;
-        return $this;
+        return $this->setTokenValue($methodName);
     }
     
     public function getMethodName(): string
     {
-        return $this->methodName;
+        return $this->getTokenValue();
     }
 }
