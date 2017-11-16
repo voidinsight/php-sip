@@ -10,4 +10,18 @@ class MessageTest extends TestCase
     {
         $this->assertInstanceOf('VoidInsight\PHPSIP\Structure\Message', new Message());
     }
+    
+    public function testHeaderMgmt()
+    {
+        $headerStub = $this->getMockBuilder('VoidInsight\PHPSIP\Structure\Header')
+                                ->setMethods(['getName'])
+                                ->getMock();
+        $headerStub->method('getName')->will($this->returnValue('testHeaderName'));
+        
+        $obj = new Message();
+        
+        $this->assertSame($obj, $obj->addHeader($headerStub));
+        $this->assertSame($headerStub, $obj->getHeader($headerStub->getName()));
+        $this->assertSame($obj, $obj->delHeader($headerStub->getName()));
+    }
 }

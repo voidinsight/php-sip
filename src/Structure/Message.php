@@ -3,15 +3,16 @@
 namespace VoidInsight\PHPSIP\Structure;
 
 use VoidInsight\PHPSIP\Structure\StartLine;
+use VoidInsight\PHPSIP\Structure\Header;
+use VoidInsight\PHPSIP\Exceptions\HeaderUnknownException;
 
 class Message
 {
     private $startLine;
-    /**
-     * TODO
-     * Add Headers
-     */
-     private $body;
+    
+    private $headers;
+    
+    private $body;
     
     public function getStartLine(): StartLine
     {
@@ -33,5 +34,36 @@ class Message
     {
         $this->body = $body;
         return $this;
+    }
+    
+    public function addHeader(Header $header): Message
+    {
+        $this->headers[$header->getName()] = $header;
+        return $this;
+    }
+    
+    public function getHeader(string $headerName): Header
+    {
+        try {
+            return $this->headers[$headerName];
+            
+        } catch (OutOfBoundsException $e) {
+            throw new HeaderUnknownException("$headerNames", 0, $e);
+        }
+    }
+    
+    public function delHeader(string $headerName): Message
+    {
+        try {
+            unset($this->headers[$headerName]);
+            return $this;
+            
+        } catch (OutOfBoundsException $e) {
+            throw new HeaderUnknownException("$headerName", 0, $e);
+        }
+    }
+    
+    public function __construct() {
+        $this->headers = array();
     }
 }
