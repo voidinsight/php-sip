@@ -31,13 +31,4 @@ class Version extends Token
     {
         return $this->minorNumber;
     }
-    
-    /**
-     * Magic methods
-     */
-    public function __construct(int $majorNumber, int $minorNumber)
-    {
-        $this->setMajorNumber($majorNumber)
-             ->setMinorNumber($minorNumber);
-    }
 }

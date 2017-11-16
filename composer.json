@@ -12,7 +12,8 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "VoidInsight\\PHPSIP\\": "src/"
+            "VoidInsight\\PHPSIP\\": "src/",
+            "VoidInsight\\PHPSIP\\Tests\\": "tests/"
         }
     },
     "require": {},
@@ -20,6 +21,7 @@
         "php": "7.1.11",
         "ext-openssl": "^7.1",
         "ext-filter": "^7.1",
-        "ext-hash": "^1.0"
+        "ext-hash": "^1.0",
+        "phpunit/phpunit": "^6.4"
     }
 }
